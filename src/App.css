@@ -1,0 +1,164 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Define root variables for a consistent color scheme */
+:root {
+  --primary-color: #3d5afe; /* A more vibrant primary blue */
+  --primary-dark: #1a237e;
+  --secondary-color: #f5f7fa;
+  --text-color: #2c3e50;
+  --gradient-start: #e3eeff;
+  --gradient-end: #f3e7e9;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* --- 2. Enhanced Background --- */
+  /* A smoother, multi-tone gradient for a more modern feel */
+  background: linear-gradient(45deg, var(--gradient-end) 0%, var(--gradient-start) 100%);
+  color: var(--text-color); 
+}
+
+/* --- 3. Layout & Card Styling --- */
+.MuiContainer-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* Enhanced title with gradient text */
+.MuiTypography-h3 {
+  text-align: center;
+  font-weight: 700 !important; /* Bolder for more impact */
+  
+  /* Gradient Text Effect */
+  background: linear-gradient(45deg, var(--primary-color) 30%, var(--primary-dark) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem !important;
+}
+
+/* Refined "glassmorphism" card for the input */
+.MuiContainer-root > .MuiBox-root:first-of-type {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 2.5rem !important;
+  border-radius: 20px; /* Softer radius */
+  box-shadow: 0 8px 32px 0 rgba(61, 90, 254, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- 4. Enhanced Interactivity --- */
+/* Stronger hover effect on the main card */
+.MuiContainer-root > .MuiBox-root:first-of-type:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 40px 0 rgba(61, 90, 254, 0.2);
+}
+
+/* Gradient button with sliding animation on hover */
+.MuiButton-contained {
+  transition: all 0.4s ease-in-out !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  background: linear-gradient(45deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--primary-dark) 100%);
+  background-size: 200% auto;
+  border: none !important;
+  box-shadow: 0 4px 15px 0 rgba(61, 90, 254, 0.3);
+}
+
+.MuiButton-contained:hover {
+  background-position: right center; /* Change the position of the background on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px 0 rgba(61, 90, 254, 0.4);
+}
+
+
+@keyframes glow {
+  0% { box-shadow: 0 0 4px rgba(61, 90, 254, 0.3); }
+  100% { box-shadow: 0 0 16px rgba(61, 90, 254, 0.3); }
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-width: 1px;
+  border-color: var(--primary-color) !important;
+  animation: glow 1.5s infinite alternate;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color);
+}
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-color) !important; 
+}
+
+/* --- 5. Polished Output Section --- */
+/* Redesigned output card for better contrast */
+.MuiContainer-root > .MuiBox-root:last-of-type {
+  background: #ffffff; 
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #e0e7ff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Sub-header with an accent underline */
+.MuiTypography-h6 {
+  font-weight: 600 !important;
+  color: var(--primary-dark);
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem !important;
+}
+
+.MuiTypography-h6::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  border-radius: 2px;
+}
+
+/* Style the "Copy" button */
+.MuiButton-outlined {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+.MuiButton-outlined:hover {
+  background: rgba(61, 90, 254, 0.239) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* --- 6. Responsiveness --- */
+@media (max-width: 600px) {
+  .MuiTypography-h3 {
+    font-size: 2rem !important; 
+  }
+
+  .MuiContainer-root {
+    padding: 1rem !important; 
+  }
+
+  .MuiContainer-root > .MuiBox-root:first-of-type {
+    padding: 1.5rem !important; 
+  }
+}
