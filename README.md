@@ -1,12 +1,60 @@
-# React + Vite
+# Smart Email Frontend 🖌️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React-based frontend for the Smart Email application. It provides a clean and simple user interface for interacting with the AI-powered backend to generate email content effortlessly.
 
-Currently, two official plugins are available:
+## Features
+-   **Interactive UI:** A simple text area for users to input their email generation prompts.
+-   **Real-time Responses:** Communicates with the backend API to fetch and display the AI-generated email in real-time.
+-   **Responsive Design:** A clean layout that works on different screen sizes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Stack
+-   **React**
+-   **JavaScript**
+-   **CSS** (or specify your styling library, e.g., Tailwind CSS, Material-UI)
+-   **Axios** (for making API requests to the backend)
 
-## Expanding the ESLint configuration
+## Prerequisites
+-   Node.js (v16 or later)
+-   npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setup and Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/ArmanShaikh684/Smart-Email-Frontend.git](https://github.com/ArmanShaikh684/Smart-Email-Frontend.git)
+    cd Smart-Email-Frontend
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    *(or `yarn install` if you use Yarn)*
+
+3.  **Configuration:**
+    The application needs to know the URL of the backend API. Create a `.env.local` file in the root of the project and add the following variable:
+    
+    **.env.local**
+    ```
+    REACT_APP_API_URL=http://localhost:8080
+    ```
+    *Note: Your code will need to use `process.env.REACT_APP_API_URL` to access this value.*
+
+4.  **Run the Development Server:**
+    ```bash
+    npm start
+    ```
+    *(or `yarn start`)*
+
+    The application will open in your browser at `http://localhost:3000`.
+
+## How to Use
+1.  Make sure the backend server is running.
+2.  Open the application in your browser.
+3.  Type a prompt into the text box describing the email you want to write.
+4.  Click the "Generate" button.
+5.  The AI-generated email will appear in the response area below.
+
+
+
+---
