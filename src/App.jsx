@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import { Container, TextField, Typography , Box, FormControl, InputLabel, MenuItem, Select,Button , CircularProgress } from '@mui/material';
 import axios from 'axios';
+import API_BASE_URL from './config';
 
 function App() {
   
@@ -16,7 +17,7 @@ function App() {
     setLoading(true);
     setError('');
     try{
-      const response = await axios.post("http://localhost:8080/api/email/generate" , {
+      const response = await axios.post( `${API_BASE_URL}/api/email/generate`, {
         emailContent,
         tone
       });
